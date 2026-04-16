@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Home from "@/app/Components/Home/Home";
 
-export default function Home() {
+export default function Page() {
   return (
-    <h1>Hello, Next.js!</h1>
-   
+    <main className="w-full">
+      <Home />
+    </main>
   );
 }
