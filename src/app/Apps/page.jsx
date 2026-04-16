@@ -8,8 +8,6 @@ const Apps = async () => {
     const data = await fetch(api).then(res => res.json());
     console.log(data);
 
-
-
     return (
         <div className="min-h-screen bg-[#f6f6f6] px-4 py-12 md:px-8 lg:px-16">
             <div className="mx-auto max-w-7xl">
