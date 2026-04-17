@@ -1,10 +1,11 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Apps = async () => {
 
-    const api = 'http://localhost:3000//data.json';
+    const api = 'http://localhost:3000/data.json';
     const data = await fetch(api).then(res => res.json());
     console.log(data);
 
@@ -28,36 +29,35 @@ const Apps = async () => {
 
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {data.map((app) => (
-                        <div
-                            key={app.id}
-                            className="rounded-lg border border-[#e6e6e6] bg-white p-3 shadow-sm"
-                        >
-                            <div className="h-48 rounded bg-[#d9d9d9] overflow-hidden">
-                                <Image
-                                    src={app.image}
-                                    alt={app.title}
-                                    width={400}
-                                    height={240}
-                                    className="w-full h-full object-contain"
-                                />
+                        <Link href={`/Apps/${app.id}`} key={app.id}>
+                            <div className="rounded-lg border border-[#e6e6e6] bg-white p-3 shadow-sm">
+                                <div className="h-48 rounded bg-[#d9d9d9] overflow-hidden">
+                                    <Image
+                                        src={app.image}
+                                        alt={app.title}
+                                        width={400}
+                                        height={240}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+
+                                <h3 className="mt-3 text-[18px] font-semibold text-[#132a42] truncate">
+                                    {app.title}
+                                </h3>
+
+                                <div className="mt-3 flex items-center justify-between">
+                                    <span className="inline-flex items-center gap-1 rounded bg-[#e7fff1] px-3 py-1 text-[14px] text-[#00b65b]">
+                                        <span>↓</span>
+                                        <span>{app.downloads}</span>
+                                    </span>
+
+                                    <span className="inline-flex items-center gap-1 rounded bg-[#fff3e8] px-3 py-1 text-[14px] text-[#ff9c2f]">
+                                        <span>★</span>
+                                        <span>{app.ratingAvg}</span>
+                                    </span>
+                                </div>
                             </div>
-
-                            <h3 className="mt-3 text-[18px] font-semibold text-[#132a42] truncate">
-                                {app.title}
-                            </h3>
-
-                            <div className="mt-3 flex items-center justify-between">
-                                <span className="inline-flex items-center gap-1 rounded bg-[#e7fff1] px-3 py-1 text-[14px] text-[#00b65b]">
-                                    <span>↓</span>
-                                    <span>{app.downloads}</span>
-                                </span>
-
-                                <span className="inline-flex items-center gap-1 rounded bg-[#fff3e8] px-3 py-1 text-[14px] text-[#ff9c2f]">
-                                    <span>★</span>
-                                    <span>{app.ratingAvg}</span>
-                                </span>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
