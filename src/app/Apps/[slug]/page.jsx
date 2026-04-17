@@ -19,7 +19,7 @@ export const dynamic = 'force-dynamic';
 
 const AppDetails = async ({ params }) => {
     const { slug } = await params;
-    const response = await fetch(`http://localhost:3000/data.json`);
+    const response = await fetch("https://play-store-next.vercel.app/data.json");
     const allData = await response.json();
     const data = allData.find(app => app.id === Number(slug));
 
