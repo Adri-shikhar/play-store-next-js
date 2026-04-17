@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 const Apps = async () => {
 
     const api = 'http://localhost:3000/data.json';
