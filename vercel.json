@@ -1,9 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "devCommand": "npm run dev",
+    "buildCommand": "next build",
+    "devCommand": "next dev",
     "installCommand": "npm install",
-    "framework": "vite",
-    "outputDirectory": "dist",
+    "framework": "nextjs",
     "env": {
         "NODE_ENV": "production"
     }
