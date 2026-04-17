@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 const Apps = async () => {
 
-    const api = 'http://localhost:3000/data.json';
+    const api = "https://play-store-next.vercel.app/data.json";
     const data = await fetch(api).then(res => res.json());
     console.log(data);
 
