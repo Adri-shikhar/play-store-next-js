@@ -1,10 +1,11 @@
 "use client"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppInstallContext } from "../Context/AppInstallContext";
 
 export default function InstallButton({ app }) {
     const [isInstalling, setIsInstalling] = useState(false);
     const [isInstalled, setIsInstalled] = useState(false);
-    const [installedApps, setInstalledApps] = useState([]);
+    const { installedApps, setInstalledApps } = useContext(AppInstallContext);
 
     const handleInstall = async () => {
         setIsInstalling(true);
@@ -21,7 +22,7 @@ export default function InstallButton({ app }) {
             setIsInstalling(false);
         }
     };
-     console.log("Installed Apps:", installedApps);
+    console.log("Installed Apps:", installedApps);
 
     return (
         <button
