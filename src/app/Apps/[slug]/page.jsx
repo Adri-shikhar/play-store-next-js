@@ -6,6 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { RiChatVoiceLine } from "react-icons/ri";
 import { IoArrowBackOutline } from "react-icons/io5";
+import InstallButton from "../InstallButton";
 
 
 export const metadata = {
@@ -79,11 +80,7 @@ const AppDetails = async ({ params }) => {
                                             </div>
                                         </div>
 
-                                        <button
-                                            className="mt-3 md:mt-4 bg-[#14c886] hover:bg-[#0fb175] text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-2 md:py-2.5 rounded flex items-center gap-2 w-full md:w-auto justify-center md:justify-start"
-                                        >
-                                            <span>Install Now ({data.size} MB)</span>
-                                        </button>
+                                        <InstallButton app={data} />
                                     </div>
                                 </div>
                             </div>
