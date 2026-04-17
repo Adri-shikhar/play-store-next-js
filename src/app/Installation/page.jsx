@@ -5,6 +5,9 @@ import { FiDownload } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { AppInstallContext } from "@/app/Context/AppInstallContext";
 
+
+
+
 const Installation = () => {
     const { installedApps: contextInstalledApps } = useContext(AppInstallContext);
     const [installedApps, setInstalledApps] = useState([]);

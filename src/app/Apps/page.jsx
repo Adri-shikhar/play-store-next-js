@@ -5,6 +5,14 @@ import Link from "next/link";
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+    title: "Play Store - All Applications",
+    description: "View your application dashboard and installed apps",
+};
+
+
+
+
 const Apps = async () => {
 
     const api = "https://play-store-next.vercel.app/data.json";
