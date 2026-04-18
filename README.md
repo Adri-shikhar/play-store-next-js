@@ -1,3 +1,5 @@
+#Live-link : https://play-store-next-js-2xfh.vercel.app/
+
 # Play Store Next.js
 
 A modern Play Store clone built with Next.js 16, React 19, and Tailwind CSS. Browse apps, install/uninstall them, and track your dashboard metrics in real-time.
